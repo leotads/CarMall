@@ -1,0 +1,38 @@
+{
+  "name": "CarMall",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "cross-env NODE_ENV=development nodemon . --ignore __tests__",
+    "pretest": "cross-env NODE_ENV=test sequelize db:migrate",
+    "test": "cross-env NODE_ENV=test jest"
+  },
+  "author": "Leonardo Freitas",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "consign": "^0.1.6",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.16.4",
+    "jwt-simple": "^0.5.6",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "pg": "^7.10.0",
+    "sequelize": "^5.8.5"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.16.0",
+    "jest": "^24.8.0",
+    "mocha": "^6.1.4",
+    "nodemon": "^1.19.0",
+    "sequelize-cli": "^5.4.0",
+    "sqlite3": "^4.0.8"
+  }
+}
