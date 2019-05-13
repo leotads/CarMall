@@ -5,9 +5,11 @@
   "main": "server.js",
   "scripts": {
     "start": "node .",
+    "predev": "cross-env NODE_ENV=development sequelize db:migrate",
     "dev": "cross-env NODE_ENV=development nodemon . --ignore __tests__",
     "pretest": "cross-env NODE_ENV=test sequelize db:migrate",
-    "test": "cross-env NODE_ENV=test jest"
+    "test": "cross-env NODE_ENV=test jest",
+    "posttest": "cross-env NODE_ENV=test sequelize db:migrate:undo:all"
   },
   "author": "Leonardo Freitas",
   "license": "MIT",
@@ -33,6 +35,7 @@
     "mocha": "^6.1.4",
     "nodemon": "^1.19.0",
     "sequelize-cli": "^5.4.0",
-    "sqlite3": "^4.0.8"
+    "sqlite3": "^4.0.8",
+    "supertest": "^4.0.2"
   }
 }
